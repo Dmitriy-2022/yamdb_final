@@ -2,7 +2,7 @@ name: Sprint_16
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   tests:
