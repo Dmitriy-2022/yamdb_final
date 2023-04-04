@@ -1,5 +1,5 @@
 #New private key
-name: Django-app workflow
+name: Sprint_16
 
 on:
   push:
