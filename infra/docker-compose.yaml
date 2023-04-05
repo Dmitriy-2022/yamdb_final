@@ -15,6 +15,7 @@ services:
     env_file:
       - ./.env
   web:
+    image: dimonium/yamdb_final:latest #Под вопросом
     build: ../api_yamdb
     restart: always
     volumes:

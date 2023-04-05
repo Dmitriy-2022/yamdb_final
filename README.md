@@ -1,3 +1,5 @@
+![yamdb_workflow.yml](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 # **api_yamdb**
 
 ### **Описание:**
