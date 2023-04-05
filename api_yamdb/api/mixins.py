@@ -9,7 +9,7 @@ class CreateDestroyList(
     mixins.ListModelMixin,
     viewsets.GenericViewSet,
 ):
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, )
     search_fields = ('name',)
     lookup_field = 'slug'
 
