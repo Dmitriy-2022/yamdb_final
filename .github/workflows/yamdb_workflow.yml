@@ -1,7 +1,6 @@
 name: Sprint_16
 
-on:
-  push:
+on: push:
     branches: [ master ]
 
 jobs:
