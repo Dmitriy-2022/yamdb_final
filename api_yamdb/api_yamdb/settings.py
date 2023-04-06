@@ -3,9 +3,12 @@ from datetime import timedelta
 # from os.path import dirname, join
 from pathlib import Path
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'infra', '.env')
+load_dotenv(dotenv_path)
 
 # dotenv_path = join(dirname(__file__), 'keys.env')
 # load_dotenv(dotenv_path)
