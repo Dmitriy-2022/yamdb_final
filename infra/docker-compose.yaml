@@ -13,7 +13,7 @@ services:
       - database:/var/lib/postgresql/data/
     # адрес файла, где хранятся переменные окружения
     env_file:
-      - ./.env
+      - yamdb_final/infra/.env
   web:
     image: dimonium/yamdb_final:latest #Под вопросом
     build: ../api_yamdb
@@ -29,7 +29,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env
+      - yamdb_final/infra/.env
 
   # Новый контейнер
   nginx:
