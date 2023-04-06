@@ -1,4 +1,4 @@
-#push Docker Hub
+#deploy
 name: Sprint_16
 
 on: 
