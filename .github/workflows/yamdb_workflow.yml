@@ -1,4 +1,4 @@
-#deploy
+#deploy + docker-compose in server
 name: Sprint_16
 
 on: 
