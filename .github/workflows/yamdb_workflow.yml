@@ -1,4 +1,5 @@
-#deploy + docker-compose in server
+#deploy_v2.x + docker-compose in server
+#kill 0:0:0:80
 name: Sprint_16
 
 on: 
