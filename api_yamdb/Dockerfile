@@ -6,14 +6,14 @@ WORKDIR /app
 
 # Скопировать с локального компьютера файл зависимостей
 # в директорию /app.
-COPY requirements.txt /app
+COPY . .
 
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r requirements.txt --no-cache-dir
 
-# Скопировать содержимое директории /api_yamdb c локального компьютера
+# Скопировать содержимое директории /yamdb_final c локального компьютера
 # в директорию /app.
 COPY ../ /app
 
 # Выполнить запуск сервера разработки при старте контейнера.
-CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]  
+CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]

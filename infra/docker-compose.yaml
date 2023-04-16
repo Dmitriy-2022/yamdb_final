@@ -15,7 +15,7 @@ services:
       - ./.env
   web:
     image: dimonium/yamdb_final:latest #Под вопросом (либо image, либо build)
-    build: ../api_yamdb #Путь до Dockerfile относительно docker-compose
+    #build: ../api_yamdb #Путь до Dockerfile относительно docker-compose
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
