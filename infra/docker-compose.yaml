@@ -12,10 +12,10 @@ services:
       - database:/var/lib/postgresql/data/
     # адрес файла, где хранятся переменные окружения
     env_file:
-      - .env
+      - ./.env
   web:
-    image: dimonium/yamdb_final:latest #Под вопросом
-    build: ../api_yamdb
+    image: dimonium/yamdb_final:latest #Под вопросом (либо image, либо build)
+    build: ../api_yamdb #Путь до Dockerfile относительно docker-compose
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
     env_file:
-      - .env
+      - ./.env
 
   # Новый контейнер
   nginx:
