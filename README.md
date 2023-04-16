@@ -1,4 +1,4 @@
-https://github.com/Dmitriy-2022/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+![Status](https://github.com/Dmitriy-2022/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # **api_yamdb**
 
