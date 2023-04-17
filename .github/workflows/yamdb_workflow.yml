@@ -1,5 +1,5 @@
-#deploy_v2.x + docker-compose in server
-#kill 0:0:0:80
+#add .env
+
 name: Sprint_16
 
 on: 
