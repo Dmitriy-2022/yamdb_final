@@ -1,5 +1,5 @@
 #Базовый образ
-FROM python:3.7-slim
+FROM python:3.7
 
 # Сделать директорию /app рабочей директорией.
 WORKDIR /app
@@ -10,8 +10,6 @@ COPY . .
 
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r requirements.txt --no-cache-dir
-
-RUN apt-get update -y && apt-get install -y iputils-ping
 
 # Скопировать содержимое директории /yamdb_final c локального компьютера
 # в директорию /app.
