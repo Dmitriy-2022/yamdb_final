@@ -1,20 +1,16 @@
-# v.222
+# v.scp docker-composel
 version: '3.8'
 
-# имена и описания контейнеров, которые должны быть развёрнуты
+
 services:
-  # описание контейнера db
   db:
-    # образ, из которого должен быть запущен контейнер
     image: postgres:13.0-alpine
-    # volume и связанная с ним директория в контейнере
     volumes:
       - database:/var/lib/postgresql/data/
-    # адрес файла, где хранятся переменные окружения
     env_file:
       - ./.env
     ports:
-      - 5432:5432
+      - "5432:5432"
   web:
     image: dimonium/yamdb_final:latest
     restart: always
@@ -25,18 +21,14 @@ services:
       # Данные, хранящиеся в томе media_value, будут доступны в контейнере web 
       # через директорию /app/media/
       - media_value:/app/media/
-    # «зависит от», 
     depends_on:
       - db
     env_file:
       - ./.env
 
-  # Новый контейнер
   nginx:
-    # образ, из которого должен быть запущен контейнер
     image: nginx:1.21.3-alpine
 
-    # запросы с внешнего порта 80 перенаправляем на внутренний порт 80
     ports:
       - "80:80"
 
@@ -54,11 +46,9 @@ services:
       - media_value:/var/html/media/
 
     depends_on:
-      # Контейнер nginx должен быть запущен после контейнера web
       - web
 
 volumes:
-  # Новые тома 
   static_value:
   media_value:
   database:
