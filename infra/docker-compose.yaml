@@ -1,4 +1,4 @@
-# v.scp docker-composel
+# change .env
 version: '3.8'
 
 
