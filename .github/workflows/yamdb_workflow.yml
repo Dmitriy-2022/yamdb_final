@@ -1,5 +1,5 @@
 #add .env
-
+#rm maim.yaml
 name: Sprint_16
 
 on: 
