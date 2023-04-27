@@ -1,4 +1,4 @@
-# change .env
+# change .env DB_HOST=db
 version: '3.8'
 
 
