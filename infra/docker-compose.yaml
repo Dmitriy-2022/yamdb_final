@@ -1,4 +1,4 @@
-# change .env DB_HOST=db, change on server
+# postgres:latest
 version: '3.8'
 
 services:
