@@ -1,4 +1,4 @@
-# postgres:latest
+#postgres:13.0-alpine
 version: '3.8'
 
 services:
