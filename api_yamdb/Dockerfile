@@ -16,7 +16,7 @@ RUN apt-get update -y && apt-get install -y iputils-ping
 
 # Скопировать содержимое директории /yamdb_final c локального компьютера
 # в директорию /app.
-COPY ../ /app
+COPY . .
 
 # Выполнить запуск сервера разработки при старте контейнера.
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
