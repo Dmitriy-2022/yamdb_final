@@ -11,9 +11,6 @@ COPY . .
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r requirements.txt --no-cache-dir
 
-# Устанвоить ping 
-RUN apt-get update -y && apt-get install -y iputils-ping
-
 # Скопировать содержимое директории /yamdb_final c локального компьютера
 # в директорию /app.
 COPY . .
