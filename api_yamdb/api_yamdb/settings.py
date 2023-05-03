@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'infra', '.env')
 load_dotenv(dotenv_path)
 
+# new host - 51.250.16.86
 # dotenv_path = join(dirname(__file__), 'keys.env')
 # load_dotenv(dotenv_path)
 
