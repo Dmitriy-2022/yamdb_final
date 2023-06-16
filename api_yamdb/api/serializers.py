@@ -12,6 +12,7 @@ from users.models import User
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы с категориями"""
 
     class Meta:
         model = Category
@@ -19,6 +20,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class GenreSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы с жанрами"""
 
     class Meta:
         model = Genre
@@ -26,6 +28,7 @@ class GenreSerializer(serializers.ModelSerializer):
 
 
 class TitleListRetrieveSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы со списком произведений"""
     category = CategorySerializer()
     genre = GenreSerializer(many=True)
     rating = serializers.IntegerField(default=None)
@@ -43,6 +46,7 @@ class TitleListRetrieveSerializer(serializers.ModelSerializer):
 
 
 class TitleSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы произведенями"""
     category = serializers.SlugRelatedField(
         queryset=Category.objects.all(),
         slug_field='slug'
@@ -69,6 +73,7 @@ class TitleSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы с оценками"""
     author = serializers.SlugRelatedField(
         read_only=True,
         slug_field='username'
@@ -97,6 +102,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы с комментариями"""
     author = serializers.SlugRelatedField(
         read_only=True,
         slug_field='username'
@@ -109,6 +115,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class UsersSerializer(serializers.ModelSerializer):
+    """"Сериализатор для работы с пользователями"""
     username = serializers.CharField(
         max_length=settings.USERNAME_MAX_LENGTH,
         validators=[
@@ -131,6 +138,7 @@ class UsersSerializer(serializers.ModelSerializer):
 
 
 class SignUpSerializer(serializers.ModelSerializer, MeValidator):
+    """"Сериализатор для работы авторизацией"""
     username = serializers.CharField(
         required=True,
         max_length=settings.USERNAME_MAX_LENGTH,
@@ -146,6 +154,7 @@ class SignUpSerializer(serializers.ModelSerializer, MeValidator):
 
 
 class GetTokenSerializer(serializers.Serializer, MeValidator):
+    """"Сериализатор для работы с токенами"""
     confirmation_code = serializers.CharField(required=False)
     username = serializers.CharField(
         required=True,

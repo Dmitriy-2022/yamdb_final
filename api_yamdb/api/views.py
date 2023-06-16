@@ -25,6 +25,7 @@ from users.models import User
 
 @permission_classes([IsAdminOrReadOnly])
 class TitleViewSet(viewsets.ModelViewSet):
+    """"Создание произведений"""
     queryset = Title.objects.all().annotate(rating=Avg('reviews__score'))
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter,)
     filterset_class = TitleFilter
@@ -39,18 +40,21 @@ class TitleViewSet(viewsets.ModelViewSet):
 
 @permission_classes([IsAdminOrReadOnly])
 class CategoryViewSet(CreateDestroyList):
+    """"Создание категорий"""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 
 @permission_classes([IsAdminOrReadOnly])
 class GenreViewSet(CreateDestroyList):
+    """"Создание жанров"""
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
 
 
 @permission_classes([IsAdminOrModeratorOrReadOnly])
 class ReviewViewSet(viewsets.ModelViewSet):
+    """"Создание оценок"""
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
@@ -67,6 +71,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 @permission_classes([IsAdminOrModeratorOrReadOnly])
 class CommentViewSet(viewsets.ModelViewSet):
+    """"Создание комментариев"""
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
@@ -83,6 +88,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 @permission_classes([IsAdmin])
 class UsersViewSet(viewsets.ModelViewSet):
+    """"Работа с пользователями"""
     http_method_names = ['get', 'post', 'patch', 'delete']
     queryset = User.objects.all()
     serializer_class = UsersSerializer

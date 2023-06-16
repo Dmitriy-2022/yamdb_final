@@ -1,6 +1,5 @@
 import os
 from datetime import timedelta
-# from os.path import dirname, join
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -10,12 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'infra', '.env')
 load_dotenv(dotenv_path)
 
-# new host - 51.250.16.86
-# dotenv_path = join(dirname(__file__), 'keys.env')
-# load_dotenv(dotenv_path)
-
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -78,12 +72,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -111,8 +99,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = ((BASE_DIR / 'static/'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
